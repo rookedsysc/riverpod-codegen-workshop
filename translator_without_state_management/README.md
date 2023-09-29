@@ -9,5 +9,7 @@
 3) iOS나 Android 플랫폼 사용 시 번들 id 혹은 패키지명을 'xyz.penrosesteps.workshops.riverpodcodegen'로 설정. 만약 패키지명 중복으로 플랫폼 설정이 불가하다면 rename 패키지를 이용해 프로젝트 패키지명 변경 후 등록하기
 4) API 설정 후 
 https://developers.naver.com/apps/#/myapp 에서 client id와 secret를 복사 해 lib/common/papago.dart 파일에 아래 코드 추가
+```
 const papagoClientId = '복사한 클라이언트 아이디';
 const papagoClientSecret = '복사한 시크릿키';
+```
