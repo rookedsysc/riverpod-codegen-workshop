@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translator_without_state_management/color_util.dart';
+import 'package:translator_without_state_management/common/color_util.dart';
 import 'package:translator_without_state_management/presentation/component/language_exchanger.dart';
 import 'package:translator_without_state_management/presentation/component/language_selector.dart';
 

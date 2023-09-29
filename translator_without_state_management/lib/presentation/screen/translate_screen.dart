@@ -4,10 +4,16 @@ import 'package:translator_without_state_management/presentation/layout/translat
 import 'package:translator_without_state_management/presentation/layout/translate_bottom.dart';
 import 'package:translator_without_state_management/presentation/layout/translate_top.dart';
 
-class TranslateScreen extends StatelessWidget {
+class TranslateScreen extends StatefulWidget {
   final Translator translator;
   const TranslateScreen({super.key, required this.translator});
 
+  @override
+  State<TranslateScreen> createState() => _TranslateScreenState();
+}
+
+class _TranslateScreenState extends State<TranslateScreen> {
+  String? translateSourceText;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,12 +23,14 @@ class TranslateScreen extends StatelessWidget {
             const TranslateTop(),
             TranslateBody(
               onChangedText: (text) {
-                // TODO: 번역하기 버튼이 눌렸을 때 번역할 텍스트 상태 저장하기
+                translateSourceText = text;
               },
             ),
             TranslateBottom(
               onTranslate: () {
-                // TODO: Translator 객체를 이용해 번역 API 호출하기, API 호출 후 응답의 상태를 저장하고, 화면에 갱신하기
+                if( translateSourceText?.isNotEmpty ?? false ) {
+                  widget.translator.translate(translateSourceText!);
+                }
               },
             ),
           ],

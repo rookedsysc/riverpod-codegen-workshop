@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:translator_without_state_management/data/translate_repository.dart';
 import 'package:translator_without_state_management/domain/translator.dart';
 import 'package:translator_without_state_management/presentation/screen/translate_screen.dart';
 
@@ -20,7 +21,9 @@ class MainApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: TranslateScreen(
-        translator: Translator(),
+        translator: Translator(
+          repository: TranslateRepository(),
+        ),
       ),
     );
   }

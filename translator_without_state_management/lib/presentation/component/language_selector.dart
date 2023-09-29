@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:translator_without_state_management/color_util.dart';
+import 'package:translator_without_state_management/common/color_util.dart';
 
 class LanguageSelector extends StatelessWidget {
   const LanguageSelector({super.key});
