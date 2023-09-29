@@ -1,8 +1,6 @@
 # translator_without_state_management
 
-플러터 리버팟 코드제너레이션 워크샵
-
-1. 프로젝트 실행하기
+**프로젝트 실행하기**
 
 1) lib/common/papago.dart 파일 추가
 2) 파파고 API 사용을 위해 네이버 개발자센터에서 어플리케이션 등록하기
