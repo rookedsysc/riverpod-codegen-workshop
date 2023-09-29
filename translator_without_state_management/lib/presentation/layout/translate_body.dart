@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:translator_without_state_management/presentation/component/translate_input_textfield.dart';
 
 class TranslateBody extends StatelessWidget {
-  const TranslateBody({super.key});
+  final TextCallback onChangedText;
+  const TranslateBody({super.key, required this.onChangedText});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +15,9 @@ class TranslateBody extends StatelessWidget {
               constraints: BoxConstraints(
                 minHeight: constraints.maxHeight,
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(8),
-                child: TranslateInputTextField(),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: TranslateInputTextField(onChnagedText: onChangedText),
               ),
             ),
           );

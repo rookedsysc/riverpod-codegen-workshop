@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:translator_without_state_management/color_util.dart';
+import 'package:translator_without_state_management/common/color_util.dart';
+
+typedef TextCallback = Function(String text);
 
 class TranslateInputTextField extends StatefulWidget {
-  const TranslateInputTextField({super.key});
+  final TextCallback onChnagedText;
+  const TranslateInputTextField({super.key, required this.onChnagedText});
 
   @override
   State<TranslateInputTextField> createState() =>
@@ -26,7 +29,9 @@ class _TranslateInputTextFieldState extends State<TranslateInputTextField> {
   }
 
   void _onChangedText() {
-    setState(() {});
+    setState(() {
+      widget.onChnagedText(textEditingController.text);
+    });
   }
 
   @override
