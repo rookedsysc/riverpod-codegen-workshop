@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:translator_without_state_management/presentation/translate_body.dart';
-import 'package:translator_without_state_management/presentation/translate_bottom.dart';
-import 'package:translator_without_state_management/presentation/translate_top.dart';
+import 'package:translator_without_state_management/presentation/layout/translate_body.dart';
+import 'package:translator_without_state_management/presentation/layout/translate_bottom.dart';
+import 'package:translator_without_state_management/presentation/layout/translate_top.dart';
 
 class TranslateScreen extends StatelessWidget {
   const TranslateScreen({super.key});

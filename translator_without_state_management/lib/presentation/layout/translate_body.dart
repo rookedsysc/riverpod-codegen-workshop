@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translator_without_state_management/presentation/translate_input_textfield.dart';
+import 'package:translator_without_state_management/presentation/component/translate_input_textfield.dart';
 
 class TranslateBody extends StatelessWidget {
   const TranslateBody({super.key});
