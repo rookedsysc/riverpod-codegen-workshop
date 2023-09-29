@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:translator_without_state_management/component/translate_screen.dart';
+import 'package:translator_without_state_management/presentation/translate_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
+      theme: ThemeData (
         useMaterial3: true,
         scaffoldBackgroundColor: const Color.fromRGBO(20, 28, 32, 1),
       ),

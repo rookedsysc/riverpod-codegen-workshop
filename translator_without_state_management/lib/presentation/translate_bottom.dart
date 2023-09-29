@@ -17,7 +17,7 @@ class TranslateBottom extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: Container(
-            height: 32,
+            height: 38,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(16)),
               color: ColorUtil.grayScale222,
@@ -35,7 +35,8 @@ class TranslateBottom extends StatelessWidget {
                     '번역하기',
                     style: TextStyle(
                       fontSize: 12,
-                      color: ColorUtil.grayScale48,
+                      color: ColorUtil.grayScale12,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],

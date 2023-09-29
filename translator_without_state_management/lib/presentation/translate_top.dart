@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:translator_without_state_management/color_util.dart';
-import 'package:translator_without_state_management/component/language_exchanger.dart';
-import 'package:translator_without_state_management/component/language_selector.dart';
+import 'package:translator_without_state_management/presentation/language_exchanger.dart';
+import 'package:translator_without_state_management/presentation/language_selector.dart';
 
 class TranslateTop extends StatelessWidget {
   const TranslateTop({super.key});
