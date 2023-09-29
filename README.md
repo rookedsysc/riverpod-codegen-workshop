@@ -1,0 +1,1 @@
+# riverpod-codegen-workshop
