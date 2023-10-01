@@ -2,9 +2,47 @@ import 'package:flutter/material.dart';
 import 'package:translator_without_state_management/common/color_util.dart';
 import 'package:translator_without_state_management/common/enum.dart';
 
+class _LanguageItem extends StatelessWidget {
+  final Languages language;
+  const _LanguageItem({required this.language});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pop(language),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 6),
+        child: Center(
+          child: RichText(
+            text: TextSpan(
+              text: language.flag,
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+              children: [
+                TextSpan(
+                  text: language.display,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: ColorUtil.grayScale74,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class LanguagesBottomSheet extends StatelessWidget {
-  final LanguageType languageType;
-  const LanguagesBottomSheet({super.key, required this.languageType});
+  final LanguageKind languageKind;
+  const LanguagesBottomSheet({
+    super.key,
+    required this.languageKind,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,32 +53,8 @@ class LanguagesBottomSheet extends StatelessWidget {
           padding: const EdgeInsets.only(top: 30),
           child: ListView.separated(
             itemCount: languages.length,
-            itemBuilder: (context, index) {
-              final language = languages[index];
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6),
-                child: Center(
-                  child: RichText(
-                    text: TextSpan(
-                      text: language.flag,
-                      style: const TextStyle(
-                        fontSize: 20,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: language.display,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: ColorUtil.grayScale74,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            },
+            itemBuilder: (context, index) =>
+                _LanguageItem(language: languages[index]),
             separatorBuilder: (BuildContext context, int index) {
               return Container(
                 height: 0.5,
@@ -53,7 +67,7 @@ class LanguagesBottomSheet extends StatelessWidget {
           height: 24,
           child: Center(
             child: Text(
-              languageType == LanguageType.source ? '이 언어로 입력' : '이 언어로 번역',
+              languageKind == LanguageKind.source ? '이 언어로 입력' : '이 언어로 번역',
               style: const TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w600,

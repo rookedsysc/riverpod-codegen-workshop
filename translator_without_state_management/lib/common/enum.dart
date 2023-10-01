@@ -1,4 +1,4 @@
-enum LanguageType {
+enum LanguageKind {
   source,
   dest,
 }
