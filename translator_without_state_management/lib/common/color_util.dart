@@ -7,6 +7,8 @@ class ColorUtil {
   static const Color grayScale164 = Color.fromRGBO(164, 164, 164, 1);
   static const Color grayScale222 = Color.fromRGBO(222, 222, 222, 1);
 
+  static const background = Color.fromRGBO(20, 28, 32, 1);
+
   static Color grayScale(int scale) {
     return Color.fromRGBO(scale, scale, scale, 1);
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:translator_without_state_management/common/color_util.dart';
 import 'package:translator_without_state_management/data/translate_repository.dart';
 import 'package:translator_without_state_management/domain/translator.dart';
 import 'package:translator_without_state_management/presentation/screen/translate_screen.dart';
@@ -17,7 +18,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color.fromRGBO(20, 28, 32, 1),
+        scaffoldBackgroundColor: ColorUtil.background,
       ),
       debugShowCheckedModeBanner: false,
       home: TranslateScreen(
