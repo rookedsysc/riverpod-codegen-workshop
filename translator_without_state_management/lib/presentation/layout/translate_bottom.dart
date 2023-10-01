@@ -3,7 +3,7 @@ import 'package:translator_without_state_management/common/color_util.dart';
 import 'package:translator_without_state_management/presentation/component/translate_button.dart';
 
 class TranslateBottom extends StatelessWidget {
-  final VoidCallback onTranslate;
+  final VoidCallback? onTranslate;
   const TranslateBottom({super.key, required this.onTranslate});
 
   @override

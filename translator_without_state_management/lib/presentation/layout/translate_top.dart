@@ -4,37 +4,23 @@ import 'package:translator_without_state_management/common/enum.dart';
 import 'package:translator_without_state_management/presentation/component/language_exchanger.dart';
 import 'package:translator_without_state_management/presentation/component/language_selector.dart';
 
-class TranslateTop extends StatefulWidget {
-  const TranslateTop({super.key});
+class TranslateTop extends StatelessWidget {
+  final List<Languages?> languages;
+  final Function(Languages language, LanguageKind kind) onChangedLanguage;
+  final VoidCallback onExchangeLanguage;
+  const TranslateTop({super.key, required this.languages, required this.onChangedLanguage, required this.onExchangeLanguage});
 
-  @override
-  State<TranslateTop> createState() => _TranslateTopState();
-}
-
-class _TranslateTopState extends State<TranslateTop> {
-  final List<Languages?> languages = [Languages.korean, Languages.english];
-
-  Widget _createLanguageSelector(LanguageKind languageKind) {
+  Widget _createLanguageSelector(LanguageKind kind) {
     return Expanded(
       flex: 1,
       child: LanguageSelector(
-        languageKind: languageKind,
-        language: languages[languageKind.index],
-        onSelectedLanguage: (language) {
-          setState(() {
-            languages[languageKind.index] = language;
-            final otherLanguageKind = languageKind == LanguageKind.source
-                ? LanguageKind.dest
-                : LanguageKind.source;
-            if (languages[languageKind.index] ==
-                languages[otherLanguageKind.index]) {
-              languages[otherLanguageKind.index] = null;
-            }
-          });
-        },
+        languageKind: kind,
+        language: languages[kind.index],
+        onSelectedLanguage: (language) => onChangedLanguage(language, kind),
       ),
     );
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +31,7 @@ class _TranslateTopState extends State<TranslateTop> {
           child: Row(
             children: [
               _createLanguageSelector(LanguageKind.source),
-              const LanguageExchanger(),
+              LanguageExchanger(onExchangeLanguage: onExchangeLanguage),
               _createLanguageSelector(LanguageKind.dest),
             ],
           ),
