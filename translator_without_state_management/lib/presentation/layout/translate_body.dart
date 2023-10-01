@@ -8,20 +8,9 @@ class TranslateBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: constraints.maxHeight,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: TranslateInputTextField(onChnagedText: onChangedText),
-              ),
-            ),
-          );
-        },
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: TranslateInputTextField(onChnagedText: onChangedText),
       ),
     );
   }
