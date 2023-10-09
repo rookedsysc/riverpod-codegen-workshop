@@ -3,6 +3,8 @@ import 'package:translator_without_state_management/domain/provider/languages_no
 import 'package:translator_without_state_management/domain/provider/translate_text_notifier_provider.dart';
 import 'package:translator_without_state_management/domain/provider/translator_provider.dart';
 
+// 참조한 Documet : https://pub.dev/documentation/riverpod/latest/riverpod/FamilyNotifier-class.html
+
 final translateProvider =
     NotifierProvider<TranslateProvider, List<String>>(TranslateProvider.new);
 
